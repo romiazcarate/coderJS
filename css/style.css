@@ -1,0 +1,31 @@
+main h1{
+    margin: 10px;
+    text-align: center;
+    color: blue;
+    font-size: 100px;
+}
+
+main p{
+    text-align: justify;
+    font-size: 30px;
+    color: rgb(134, 135, 135);
+}
+header nav ul{
+    display: flex;
+    margin-top: 10px;
+    padding: 0;
+    justify-content:end;
+}
+
+header nav li {
+    list-style-type: none;
+    margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+.logo__nav{
+    display: flex;
+    justify-content: left;
+}
+body{
+    background-color: #333333;
+}
