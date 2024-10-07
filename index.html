@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>BACK2PS - Tienda de videojuegos</title>
 
 </head>
 <body>
     <header>
+
+        <div class="container-logo">
+            <img src="./img/logo.jpg" alt="Logo">
+        </div>
         <nav>
-            <ul>
-                
+            <ul>      
                 <li>
                     <a href="index.html">
                         Inicio
@@ -27,10 +33,23 @@
     </header>
 
     <main>
-        <h1>
-            Pagina de videojuegos
-        </h1>
-        <p>La estructura se basa en que permite al usuario seleccionar y comprar videojuegos. El usuario podrá elegir varios títulos y ver el total de su compra al final.</p>
+
+        <h1> BACK 2 PS</h1>
+
+        <section class="juegos">
+            <h3> JUEGOS PS</h3>
+            <div id="container-juegos"></div>
+        </section>
+
+        <section>
+            <div id="container-juegos"></div>
+            <h3> JUEGOS PS2</h3>
+
+        </section>
+        
+        <section>
+            <h3 id="total-compra"> Total compra: $0</h3>
+        </section>
 
     </main>
 </body>
