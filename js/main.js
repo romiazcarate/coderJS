@@ -39,34 +39,46 @@ const juegos = [
 ];
 
 const contenedorJuegos = document.getElementById("container-juegos");
-const totalCompra = document.getElementById("total-compra");
-const total = 0;
+const totalCompra = document.getElementById("total-carrito");
+let total = 0;
 
 juegos.forEach((elm) =>{
-    // crea un div por cada Juego agregado, con su respectiva información
+    // crea un div para cada Juego agregado, con su respectiva información
     const div = document.createElement("div");
 
     div.classList.add("producto");
 
     if(elm.desc === "Juego en stock"){
         div.innerHTML = `
-        <h3> ${elm.nombre}<h3>
+        <h3 id="titulo-juego"> ${elm.nombre}</h3>
         <img src= "${elm.img}" >
-        <p> Precio: $${elm.precio} </p>
-        <button id="btn"> Comprar </button>
+
+        <br>
+        <p id="parrafo"> Precio: $${elm.precio} </p>
+        <button class="btn"> Comprar </button>
+        <button class="btn-details"> Detalles del Juego </button>
         `;
     contenedorJuegos.appendChild(div);
     }
 
-    const button = document.getElementById("btn");
+    // Evento para ingresar a comprar
+    const button = div.querySelector(".btn");
     button.addEventListener("click", () =>{
         let cantidad = parseInt(prompt(`Cuantas cantidad de ${elm.nombre} queres comprar?`));
         if(cantidad >0){
-            total =+ elm.precio * cantidad
-            totalCompra.textContent = `$${totalCompra}`;
-            alert(`Agregada ${cantidad} copia(s) de ${juego.nombre}. Precio total hasta ahora: $${totalCompra}`);
-
+            total += elm.precio * cantidad
+            totalCompra.textContent = `Total carrito: $${total}`;
+            alert(`Agregada ${cantidad} copia(s) de ${elm.nombre}. Precio total hasta ahora: $${total}`);
+        }else{
+            alert('No es una opción válida, por favor selecciona una cantidad correcta');
         }
+    })
+
+    // Evento para ver detalles
+
+    const detallesButton = div.querySelector(".btn-details");
+    detallesButton.addEventListener("click", () =>{
+        alert(`Detalles del juego: ${elm.desc}.`);
     })
 
 });

@@ -90,4 +90,25 @@ main section h3{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-  }
+}
+
+#parrafo{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+#titulo-juego{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.btn{
+    font-size: 20px;
+    background-color: #E9A051;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px; /* Agrega margen para espaciarlo */
+}
