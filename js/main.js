@@ -1,10 +1,10 @@
 // Array de juegos para comprar, hay algunos que en el momento no se encuentran con stock
-const juegos = [
+const juegosPS = [
     { 
-        nombre: 'Resident Evil 2',    
+        nombre: 'Alone in the Dark',    
         precio: 1000,
         desc: "Juego en stock",
-        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_residentevil2_front_eu_thumb.jpg' 
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.aloneinthedarkoneeyedjacksrevenge_US.1633570707831957984_thumb.jpg' 
     },
     { 
         nombre: 'Metal Gear Solid', 
@@ -13,10 +13,10 @@ const juegos = [
         img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_metalgearsolid_5_thumb.jpg' 
     },
     { 
-        nombre: 'Crash Bandicoot', 
+        nombre: 'Croc : Legend of the Gobbos', 
         precio: 550,
         desc: "Juego en stock",
-        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.crashbandicoot_GB.16238841271553101855_thumb.jpg' 
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_croclegendofthegobbos_thumb.jpg' 
     },
     { 
         nombre: 'Dino Crisis', 
@@ -31,10 +31,34 @@ const juegos = [
         img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_castlevaniasymphonyofthenight_1_thumb.jpg'
     },
     {
-        nombre: 'Metal Gear Solid', 
+        nombre: 'Crash Bash', 
         precio: 800,
-        desc: "Sin stock",
-        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_metalgearsolid_5_thumb.jpg' 
+        desc: "Juego en stock",
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.crashbash_.16219798171240980214_thumb.jpg' 
+    },
+    {
+        nombre: 'Driver', 
+        precio: 800,
+        desc: "Juego en stock",
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_driver_gb_thumb.jpg' 
+    },
+    {
+        nombre: 'Grand Theft Auto 2', 
+        precio: 800,
+        desc: "Juego en stock",
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_grandtheftauto2_3_thumb.jpg' 
+    },
+    {
+        nombre: 'Harry Potter and the Chamber of Secrets', 
+        precio: 800,
+        desc: "Juego en stock",
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_harrypotterandthechamberofsecrets_eu_thumb.jpg' 
+    },
+    {
+        nombre: 'Heart of Darkness', 
+        precio: 800,
+        desc: "Juego en stock",
+        img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_heartofdarkness_thumb.jpg' 
     }
 ];
 
@@ -42,7 +66,7 @@ const contenedorJuegos = document.getElementById("container-juegos");
 const totalCompra = document.getElementById("total-carrito");
 let total = 0;
 
-juegos.forEach((elm) =>{
+juegosPS.forEach((elm) =>{
     // crea un div para cada Juego agregado, con su respectiva información
     const div = document.createElement("div");
 
@@ -64,21 +88,37 @@ juegos.forEach((elm) =>{
     // Evento para ingresar a comprar
     const button = div.querySelector(".btn");
     button.addEventListener("click", () =>{
-        let cantidad = parseInt(prompt(`Cuantas cantidad de ${elm.nombre} queres comprar?`));
-        if(cantidad >0){
-            total += elm.precio * cantidad
-            totalCompra.textContent = `Total carrito: $${total}`;
-            alert(`Agregada ${cantidad} copia(s) de ${elm.nombre}. Precio total hasta ahora: $${total}`);
-        }else{
-            alert('No es una opción válida, por favor selecciona una cantidad correcta');
-        }
+        let cantidad;
+        while(true){
+            cantidad = parseInt(prompt(`Cuantas cantidad de ${elm.nombre} queres comprar?`));
+            if(cantidad > 0){
+                total += elm.precio * cantidad
+                totalCompra.textContent = `Total carrito: $${total}`;
+                alert(`Agregada ${cantidad} copia(s) de ${elm.nombre}. Precio total hasta ahora: $${total}`);
+                break;
+            }else{
+                alert('No es una opción válida, por favor selecciona una cantidad correcta');
+            }
+        }       
     })
+
+    const modal = document.getElementById("modal");
+    const closeButton = document.querySelector(".close-button");
 
     // Evento para ver detalles
 
     const detallesButton = div.querySelector(".btn-details");
     detallesButton.addEventListener("click", () =>{
-        alert(`Detalles del juego: ${elm.desc}.`);
+        document.getElementById("modal-titulo").textContent = elm.nombre;
+        document.getElementById("modal-descripcion").textContent = elm.desc;
+        document.getElementById("modal-img").src = elm.img;
+
+        modal.style.display = "block";
     })
+
+    // Evento para cerrar el modal
+    closeButton.addEventListener("click", () => {
+    modal.style.display = "none"; // Oculta el modal al hacer clic en "Cerrar"
+});
 
 });

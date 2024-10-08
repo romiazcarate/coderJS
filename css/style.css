@@ -5,13 +5,15 @@
     font-family: "Roboto", sans-serif;
 }
 
-body{
-    background-color: #1C1C1C;
-    
-}
 header{
     display: flex;
     padding: 10px 20px;
+    background-color: #2B2D42;
+    color: white;
+}
+
+main{
+    background-color: white;
 }
 
 .container-logo img{
@@ -48,7 +50,7 @@ header nav li a {
 main h1{
     margin: 10px;
     text-align: center;
-    color: #fafafa;
+    color: black;
     font-size: 100px;
     font-family: 'Roboto', sans-serif;
 }
@@ -56,32 +58,34 @@ main h1{
 main p{
     text-align: justify;
     font-size: 30px;
-    color: rgb(134, 135, 135);
+    color: black;
     font-family: 'Roboto', sans-serif;
 }
 
 main section h3{
     font-size: 30px;
-    color: #fafafa;
+    color:black;
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
 
 .producto {
-    border: 1px solid #E9A051;
-    border-radius: 8px;
+   
+    width: 23%; /* Aproximadamente 1/4 del ancho total */
+    margin-bottom: 20px; /* Espaciado entre filas */
+    background-color: rgb(240, 132, 132); /* Fondo blanco para cada producto */
     padding: 10px;
-    margin: 10px;
-    background-color: #2C2C2C;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centrando el contenido dentro de cada producto */
+    
 }
 
 .producto img {
-    width: 120px;
+    width: 100%;
     height: auto;
+    height: 200px; /* Ajusta según lo necesario */
 }
 
 #container-juegos {
@@ -102,13 +106,63 @@ main section h3{
     font-size: 25px;
     font-weight: bold;
 }
-
-.btn{
-    font-size: 20px;
-    background-color: #E9A051;
+.close-button{
+    display: inline-block; /* Se comportan como botones alineados horizontalmente */
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #EF233C; /* Color fuerte para los botones */
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px; /* Agrega margen para espaciarlo */
+    font-size: 14px;
+}
+.btn{
+    display: inline-block; /* Se comportan como botones alineados horizontalmente */
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #EF233C; /* Color fuerte para los botones */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal{
+    display: none;
+    position:fixed;  /* Mantener en la misma posición */
+    z-index: 1; /* Por encima de otros elementos */
+    left: 50%;
+    top: 50%;
+    width: 30%; /* Ancho completo */
+    height: 30%; /* Alto completo */
+    transform: translate(-50%, -50%);
+    overflow: auto; /* Habilitar desplazamiento si es necesario */
+    background-color: white; /* Fondo oscuro con opacidad */
+}
+
+.juegos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.producto button {
+    margin-top: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .producto {
+        width: 48%; /* Dos juegos por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .producto {
+        width: 100%; /* Un juego por fila en pantallas muy pequeñas */
+    }
 }
