@@ -1,7 +1,7 @@
 // Array de juegos para comprar, hay algunos que en el momento no se encuentran con stock
 const juegosPS = [
     { 
-        nombre: 'Alone in the Dark',    
+        nombre: 'Alone in the dark',    
         precio: 1000,
         desc: "Juego en stock",
         img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.aloneinthedarkoneeyedjacksrevenge_US.1633570707831957984_thumb.jpg' 

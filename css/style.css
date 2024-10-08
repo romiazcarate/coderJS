@@ -100,6 +100,7 @@ main section h3{
     font-size: 20px;
     text-align: center;
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 #titulo-juego{
@@ -117,11 +118,23 @@ main section h3{
     cursor: pointer;
     font-size: 14px;
 }
-.btn{
+.btn-details{
     display: inline-block; /* Se comportan como botones alineados horizontalmente */
     margin: 5px;
     padding: 10px 20px;
-    background-color: #EF233C; /* Color fuerte para los botones */
+    background-color: #191617; /* Color fuerte para los botones */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block; /* Se comportan como botones alineados horizontalmente */
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #191617; /* Color fuerte para los botones */
     color: white;
     border: none;
     border-radius: 5px;
@@ -156,6 +169,24 @@ main section h3{
 /* Responsive */
 
 @media (max-width: 768px) {
+    header{
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+   .container-logo img{
+    justify-content: center;
+    max-width: 100px;
+   }
+
+
     .producto {
         width: 48%; /* Dos juegos por fila en pantallas pequeñas */
     }
