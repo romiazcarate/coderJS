@@ -4,12 +4,14 @@ const juegosPS = [
         nombre: 'Alone in the dark',    
         precio: 1000,
         desc: "Juego en stock",
+        genero: "Survival horror, Videojuego de acción y aventura, Adventure",
         img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.aloneinthedarkoneeyedjacksrevenge_US.1633570707831957984_thumb.jpg' 
     },
     { 
         nombre: 'Metal Gear Solid', 
         precio: 800,
         desc: "Juego en stock",
+        genero: "Videojuego de sigilo, Videojuego de acción y aventura, Videojuego de disparos",
         img: 'https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_metalgearsolid_5_thumb.jpg' 
     },
     { 

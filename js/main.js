@@ -13,8 +13,9 @@ function agregarJuegos(juegos, contenedor) {
         if (elm.desc === "Juego en stock") {
             div.innerHTML = `
             <h3 id="titulo-juego"> ${elm.nombre}</h3>
-            <img src= "${elm.img}" >
             <br>
+            <img src= "${elm.img}" >
+            <hr style="border: 1px solid #000; width: 50%; margin: 20px auto;">
             <p id="parrafo"> Precio: $${elm.precio} </p>
             <button class="btn"> Comprar </button>
             <button class="btn-details"> Detalles del Juego </button>
@@ -47,7 +48,7 @@ function agregarJuegos(juegos, contenedor) {
         const detallesButton = div.querySelector(".btn-details");
         detallesButton.addEventListener("click", () => {
             document.getElementById("modal-titulo").textContent = elm.nombre;
-            document.getElementById("modal-descripcion").textContent = elm.desc;
+            document.getElementById("modal-descripcion").textContent = elm.genero;
             document.getElementById("modal-img").src = elm.img;
 
             modal.style.display = "block";

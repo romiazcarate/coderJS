@@ -62,30 +62,35 @@ main p{
     font-family: 'Roboto', sans-serif;
 }
 
-main section h3{
+.juegos h3{
     font-size: 30px;
-    color:black;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    text-align: center; /* Esto centrará el texto */
+    margin: 20px 0; /* Agrega un poco de margen vertical si es necesario */
 }
-
 
 .producto {
    
     width: 23%; /* Aproximadamente 1/4 del ancho total */
     margin-bottom: 20px; /* Espaciado entre filas */
-    background-color: rgb(240, 132, 132); /* Fondo blanco para cada producto */
-    padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Bordes redondeados */
+    background-color: #b5aaaa;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center; /* Centrando el contenido dentro de cada producto */
-    
+    color: #fff; /* Texto en blanco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
 .producto img {
     width: 100%;
     height: auto;
     height: 200px; /* Ajusta según lo necesario */
+}
+
+.producto h3{
+    color: #3c1818;
+    font-family: "Open Sans", sans-serif;
 }
 
 #container-juegos {
@@ -119,7 +124,7 @@ main section h3{
     display: inline-block; /* Se comportan como botones alineados horizontalmente */
     margin: 5px;
     padding: 10px 20px;
-    background-color: #5214ef;/* Color fuerte para los botones */
+    background-color: rgb(110, 29, 114);/* Color fuerte para los botones */
     color: white;
     border: none;
     border-radius: 5px;
@@ -130,7 +135,7 @@ main section h3{
     display: inline-block; /* Se comportan como botones alineados horizontalmente */
     margin: 5px;
     padding: 10px 20px;
-    background-color: #5214ef; /* Color fuerte para los botones */
+    background-color: rgb(110, 29, 114); /* Color fuerte para los botones */
     color: white;
     border: none;
     border-radius: 5px;
@@ -148,23 +153,56 @@ main section h3{
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    font-family: "Open Sans", sans-serif;
 }
 
 .modal{
     display: none;
-    position:fixed;  /* Mantener en la misma posición */
-    z-index: 1; /* Por encima de otros elementos */
+    position: fixed;
+    z-index: 1;
     left: 50%;
     top: 50%;
-    width: 30%; /* Ancho completo */
-    height: 30%; /* Alto completo */
+    width: 50%; /* Aumenta el ancho */
+    height: 60%; /* Aumenta la altura */
     transform: translate(-50%, -50%);
-    overflow: auto; /* Habilitar desplazamiento si es necesario */
-    background-color: white; /* Fondo oscuro con opacidad */
+    overflow: auto;
+    background-color: rgb(232, 218, 218);
+    border-radius: 10px; /* Añade bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para darle un efecto de elevación */
 }
 
-.juegos{
+.modal-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#modal-titulo {
+    font-size: 2.5rem; /* Aumenta el tamaño del título */
+    margin-bottom: 20px;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+}
+
+#modal-descripcion {
+    font-size: 1.5rem; /* Aumenta el tamaño del texto */
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 80%; /* Limita el ancho del texto */
+    font-family: "Roboto", sans-serif;
+}
+
+#modal-img {
+    max-width: 100%; /* La imagen se adapta al tamaño del modal */
+    margin-bottom: 20px;
+}
+
+
+.juegos{
+    display: block;
     flex-wrap: wrap;
     justify-content: space-between;
 
