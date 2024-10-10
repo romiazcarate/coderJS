@@ -48,9 +48,10 @@ function agregarJuegos(juegos, contenedor) {
         const detallesButton = div.querySelector(".btn-details");
         detallesButton.addEventListener("click", () => {
             document.getElementById("modal-titulo").textContent = elm.nombre;
-            document.getElementById("modal-descripcion").textContent = elm.genero;
             document.getElementById("modal-img").src = elm.img;
-
+            document.getElementById("modal-descripcion").textContent = elm.genero;
+            document.getElementById("modal-descripcion").textContent = elm.modoDeJuego;
+            document.getElementById("modal-descripcion").textContent = elm.anio;
             modal.style.display = "block";
         });
 
