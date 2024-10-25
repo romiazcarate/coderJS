@@ -10,6 +10,7 @@ header{
     padding: 10px 20px;
     background-color: #2B2D42;
     color: white;
+    align-items: center;
 }
 
 main{
@@ -17,7 +18,8 @@ main{
 }
 
 .container-logo img{
-    max-width: 150px;
+    max-width: 200px;
+    
 }
 
 header nav{
@@ -94,14 +96,6 @@ main p{
 }
 
 #container-juegos {
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-#container-juegos-ps2 {
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -210,6 +204,27 @@ main p{
 
 .producto button {
     margin-top: 10px;
+}
+
+#carrito-icono {
+    font-size: 40px; /* Aumenta el tamaño del ícono */
+    color: white; /* Cambia el color del ícono a blanco */
+    margin-right: 20px; /* Espaciado a la izquierda */
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+#carrito-icono:hover {
+    color: #E9A051; /* Cambia a un color diferente al pasar el mouse */
+}
+
+.container-logo {
+    flex: 1; /* Permite que el logo ocupe el espacio disponible */
+    max-width: 150px; /* El logo no excederá este ancho */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+.container-carrito {
+    margin-left: auto; /* Empuja el carrito hacia la derecha */
 }
 
 /* Responsive */

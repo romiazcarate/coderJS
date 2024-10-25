@@ -106,11 +106,7 @@
             "anio": 1999,
             "modoDeJuego": "Un jugador",
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_silenthill_4_thumb.jpg" 
-        }
-    ],
-
-    "juegosPS2": [ 
-
+        },
         {
             "nombre": "Medal Of Honor: Frontline",
             "precio": 1000,
@@ -219,5 +215,7 @@
             "modoDeJuego": "1 jugador",
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_residentevilcodeveronicax_thumb.jpg" 
         }
+
     ]
+
 }
