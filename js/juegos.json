@@ -1,6 +1,7 @@
 {
     "juegosPS": [
         {
+            "id": 1,
             "nombre": "Alone in the dark",    
             "precio": 1000,
             "desc": "Juego en stock",
@@ -10,6 +11,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.aloneinthedarkoneeyedjacksrevenge_US.1633570707831957984_thumb.jpg" 
         },
         { 
+            "id":2,
             "nombre": "Metal Gear Solid", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -19,6 +21,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_metalgearsolid_5_thumb.jpg"
         },
         { 
+            "id":3,
             "nombre": "Croc : Legend of the Gobbos", 
             "precio": 550,
             "desc": "Juego en stock",
@@ -28,6 +31,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_croclegendofthegobbos_thumb.jpg" 
         },
         { 
+            "id":4,
             "nombre": "Dino Crisis", 
             "precio": 700,
             "desc": "Juego en stock",
@@ -37,6 +41,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_dinocrisis_2_thumb.jpg" 
         },
         { 
+            "id":5,
             "nombre": "Castlevania", 
             "precio": 600,
             "desc": "Juego en stock",
@@ -46,6 +51,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_castlevaniasymphonyofthenight_1_thumb.jpg"
         },
         {
+            "id":6,
             "nombre": "Crash Bash", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -54,6 +60,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.crashbash_.16219798171240980214_thumb.jpg" 
         },
         {
+            "id":7,
             "nombre": "Driver", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -63,6 +70,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_driver_gb_thumb.jpg"
         },
         {
+            "id":8,
             "nombre": "Grand Theft Auto 2", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -72,6 +80,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_grandtheftauto2_3_thumb.jpg"
         },
         {
+            "id":9,
             "nombre": "Harry Potter and the Chamber of Secrets", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -81,6 +90,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_harrypotterandthechamberofsecrets_eu_thumb.jpg" 
         },
         {
+            "id": 10,
             "nombre": "Nightmare Creatures", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -90,6 +100,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/playstation_1.nightmarecreatures_US.1631731936150653080_thumb.jpg" 
         },
         {
+            "id": 11,
             "nombre": "Resident Evil 3: Nemesis", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -99,6 +110,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_residentevil3nemesis_thumb.jpg" 
         },
         {
+            "id": 12,
             "nombre": "Silent Hill", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -108,6 +120,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_1/ps1_silenthill_4_thumb.jpg" 
         },
         {
+            "id": 13,
             "nombre": "Medal Of Honor: Frontline",
             "precio": 1000,
             "desc": "Juego en stock",
@@ -117,6 +130,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_medalofhonorfrontline_thumb.jpg"
         },
         { 
+            "id": 14,
             "nombre": "Mortal Kombat: Armageddon", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -126,6 +140,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_mortalkombatarmageddon_thumb.jpg" 
         },
         { 
+            "id": 15,
             "nombre": "Obscure", 
             "precio": 550,
             "desc": "Juego en stock",
@@ -135,6 +150,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_obscure_thumb.jpg"
         },
         { 
+            "id": 16,
             "nombre": "God of War", 
             "precio": 700,
             "desc": "Juego en stock",
@@ -144,6 +160,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_godofwar_gb_thumb.jpg" 
         },
         { 
+            "id": 17,
             "nombre": "Grand Theft Auto: San Andreas", 
             "precio": 600,
             "desc": "Juego en stock",
@@ -153,6 +170,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_gtasa_thumb.jpg"
         },
         {
+            "id": 18,
             "nombre": "Resident Evil 4", 
             "precio": 1200,
             "desc": "Juego en stock",
@@ -162,6 +180,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_residentevil4_thumb.jpg" 
         },
         {
+            "id": 19,
             "nombre": "Clock Tower 3", 
             "precio": 500,
             "desc": "Juego en stock",
@@ -171,6 +190,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_clocktower3_jp_thumb.jpg" 
         },
         {
+            "id": 20,
             "nombre": "Klonoa 2", 
             "precio": 800,
             "desc": "Juego en stock",
@@ -180,6 +200,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_klonoa2lunateasveil_thumb.jpg" 
         },
         {
+            "id": 21,
             "nombre": "Pro Evolution Soccer 2011", 
             "precio": 1800,
             "desc": "Juego en stock",
@@ -189,6 +210,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/playstation_2.proevolutionsoccer2011_EU.1696535984497101765_thumb.jpg" 
         },
         {
+            "id": 22,
             "nombre": "The Sims", 
             "precio": 850,
             "desc": "Juego en stock",
@@ -198,6 +220,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_thesims_thumb.jpg" 
         },
         {
+            "id": 23,
             "nombre": "Syphon Filter: The Omega Strain", 
             "precio": 600,
             "desc": "Juego en stock",
@@ -207,6 +230,7 @@
             "img": "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_syphonfiltertheomegastrain_thumb.jpg" 
         },
         {
+            "id": 24,
             "nombre": "Resident Evil Code: Veronica X", 
             "precio": 800,
             "desc": "Juego en stock",
