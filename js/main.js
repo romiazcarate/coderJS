@@ -30,7 +30,7 @@ const mostrarJuegos = () => {
             <h3>${elm.nombre}</h3>
             <p>Precio: $${elm.precio}</p>
             <hr>
-            <button id="agregar${elm.id}">Agregar</button>
+            <button id="agregar${elm.id}">AGREGAR AL CARRITO</button>
         `;
         contenedorJuegosPS.appendChild(div); 
 
