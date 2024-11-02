@@ -1,19 +1,24 @@
 // Variables de DOM
-const contenedorJuegosPS = document.getElementById("container-juegos");
-const modal = document.getElementById("modal");
-const modalMensaje = document.getElementById("modal-mensaje");
-
+const contenedorJuegosPS = document.getElementById("container-juegos")
 let carrito = [];
 let stockProductos = [];
 
 // Función para cargar el JSON
 const cargarProductos = async () => {
     try {
-        const response = await fetch('./js/juegos.json'); 
+        const response = await fetch('https://api.rawg.io/api/games?key=813d0e66897a43d38fa21366c47589a4&platforms=187&page_size=50'); 
+        
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
-        console.log(data); // Verifica que los datos se carguen correctamente
-        stockProductos = data.juegosPS;
+
+        stockProductos = data.results.map(game => ({
+            id: game.id,
+            nombre: game.name,
+            img: game.background_image,
+            precio: precios[game.name]  ||  12000
+
+        }))
+
         mostrarJuegos(); 
     } catch (error) {
         console.error("Error al cargar el archivo JSON:", error);
@@ -22,6 +27,9 @@ const cargarProductos = async () => {
 
 // Función para mostrar los juegos en el DOM
 const mostrarJuegos = () => {
+    
+    contenedorJuegosPS.innerHTML = ""
+
     stockProductos.forEach(elm => {
         const div = document.createElement("div");
         div.classList.add("producto");
@@ -41,7 +49,7 @@ const mostrarJuegos = () => {
         
             Toastify({
                 text: `Agregado ${elm.nombre} al carrito.`,
-                duration: 3000,
+                duration: 2000,
                 close: true,
                 gravity: "top",
                 position: 'right',
@@ -57,9 +65,9 @@ const agregarCarrito = (id) => {
     const productoEnCarrito = carrito.find(producto => producto.id === id);
 
     if (productoEnCarrito) {
-        productoEnCarrito.cantidad += 1; // Incrementa la cantidad si el producto ya está en el carrito
+        productoEnCarrito.cantidad += 1; 
     } else {
-        carrito.push({ ...productoAgregado, cantidad: 1 }); // Agrega el producto con cantidad inicial de 1
+        carrito.push({ ...productoAgregado, cantidad: 1 }); 
     }
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -67,9 +75,12 @@ const agregarCarrito = (id) => {
 
 // Funcion para ir actualizando los juegos agregados al carrito
 const actualizarCarrito = () => {
-    const contenedorCarrito = document.getElementById("contenedor-carrito")
-    const totalCompra = document.getElementById("total-carrito")
-    const finalizarCompraBtn = document.getElementById("finalizar-compra")
+    const contenedorCarrito = document.getElementById("contenedor-carrito");
+    const totalCompra = document.getElementById("total-carrito");
+    const finalizarCompraBtn = document.getElementById("finalizar-compra");
+    const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+
+    console.log('Contenido del carrito:', carrito); // Verifica el contenido del carrito
 
     contenedorCarrito.innerHTML = "";
     carrito.forEach(elm => {
@@ -77,47 +88,93 @@ const actualizarCarrito = () => {
         div.classList.add("producto");
         div.innerHTML = `
             <h3>${elm.nombre}</h3>
+            <img src="${elm.img}" alt="${elm.nombre}">
             <p>Precio: $${elm.precio}</p>
             <p>Cantidad: ${elm.cantidad}</p>
             <button id="borrar${elm.id}">Borrar</button>
         `;
-        contenedorCarrito.appendChild(div)
+        contenedorCarrito.appendChild(div);
 
-        
         // Evento para borrar productos del carrito
         const botonBorrar = div.querySelector(`#borrar${elm.id}`);
         botonBorrar.addEventListener("click", () => {
             eliminarProductoCarrito(elm.id);
         });
-
     });
+
     const total = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0);
-    totalCompra.innerText = `Total: $${total}`; 
+    totalCompra.innerText = `Total: $${total}`;
 
     finalizarCompraBtn.style.display = carrito.length > 0 ? 'block' : 'none';
+    vaciarCarritoBtn.style.display = carrito.length > 0 ? 'block' : 'none';
 };
+
+
 
 const cargarCarritoDesdeLocalStorage = () => {
     const carritoGuardado = localStorage.getItem("carrito")
     if(carritoGuardado){
         carrito = JSON.parse(carritoGuardado)
+        console.log('Carrito cargado desde localStorage:', carrito); // Verifica el contenido del carrito
         actualizarCarrito()
     }
 }
+
 // Funcion para eliminar un juego del carrito
 const eliminarProductoCarrito = (id) => {
     carrito = carrito.filter(producto => producto.id !== id)
     actualizarCarrito()
 }
+
+// Funcion para vaciar carrito
+
+const vaciarCarrito = () => {
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "Esta acción vaciará todo el carrito y no podrá deshacerse.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, vaciar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            carrito = [];
+            localStorage.removeItem("carrito");
+            actualizarCarrito();
+            Swal.fire(
+                '¡Carrito vacío!',
+                'Todos los elementos han sido eliminados.',
+                'success'
+            );
+        }
+    });
+};
+
+
 // Iniciar la aplicación
 const inicializar = async () => {
-    await cargarProductos()
-    cargarCarritoDesdeLocalStorage()
+    if (document.getElementById("container-juegos")) {
+        await cargarProductos();
+        mostrarJuegos();
+    }
+    // Verifica si estás en la página carrito.html antes de llamar a cargarCarritoDesdeLocalStorage y actualizarCarrito
+    if (document.getElementById("contenedor-carrito")) {
+        cargarCarritoDesdeLocalStorage();
+        actualizarCarrito();
+    }
 
     // Vincular el botón de finalizar compra si existe en la página actual
     const finalizarCompraBtn = document.getElementById("finalizar-compra");
     if (finalizarCompraBtn) {
         finalizarCompraBtn.addEventListener("click", finalizarCompra);
+    }
+
+    // Vincular el botón de vaciar carrito si existe en la página actual
+    const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+    if (vaciarCarritoBtn) {
+        vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
     }
 };
 
@@ -161,6 +218,4 @@ const finalizarCompra = () => {
     });
 };
 
-
-// Iniciar la aplicación
-inicializar();
+inicializar()

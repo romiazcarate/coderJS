@@ -6,6 +6,10 @@
 }
 body {
     padding-top: 70px; /* Ajusta este valor según la altura real del header */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 header{
     display: flex;
@@ -22,7 +26,8 @@ header{
 
 
 main{
-    background-color: #F4F4F4
+    background-color: #F4F4F4;
+    flex: 1;
 }
 
 .container-logo img{
@@ -51,6 +56,7 @@ main p{
 
 .producto {
    
+    width: 200px; /* Fija el ancho del contenedor para todos los productos */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,8 +68,9 @@ main p{
 }
 
 .producto img {
-    width: 60%; 
-    height: auto;
+    width: 100%; /* Ajusta el ancho al contenedor */
+    max-height: 150px; /* Limita la altura máxima */
+    object-fit: cover; /* Recorta la imagen si es necesario */
     border-radius: 5px;
     margin-bottom: 8px;
 }
@@ -115,6 +122,8 @@ main p{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; /* Añadido: centra los productos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
 }
 
 #parrafo{
@@ -162,6 +171,95 @@ main p{
     justify-content: center; /* Centra los elementos en el contenedor */
 }
 
+main h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#total-carrito {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+/* Estilo para centrar el contenedor de los botones */
+.botones-carrito {
+    display: flex;
+    justify-content: center; /* Centra los elementos hijos */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 20px;
+}
+
+button {
+    background-color: #34495e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#finalizar-compra {
+    background-color: #27ae60;
+}
+
+#finalizar-compra:hover {
+    background-color: #219150;
+}
+
+#vaciar-carrito {
+    background-color: #e74c3c;
+}
+
+#vaciar-carrito:hover {
+    background-color: #c0392b;
+}
+
+footer {
+    background-color: #2c3e50; /* Color de fondo del footer */
+    color: #ffffff; /* Color del texto */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #E9A051; /* Color al pasar el mouse */
+}
+
+.container-carrito a {
+    font-family: 'PT Sans Narrow', sans-serif; /* Aplica la fuente */
+    color: #ffffff; /* Color blanco */
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
+    gap: 5px; /* Espacio entre el ícono y el texto */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+.container-carrito a:hover {
+    color: #E9A051; /* Cambia de color al pasar el mouse */
+}
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -190,3 +288,4 @@ main p{
         width: 100%; /* Un juego por fila en pantallas muy pequeñas */
     }
 }
+
