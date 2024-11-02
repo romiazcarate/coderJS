@@ -55,22 +55,17 @@ main p{
 
 
 .producto {
-   
-    width: 200px; /* Fija el ancho del contenedor para todos los productos */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #f5f5f5;
-    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    text-align: center;
     transition: transform 0.2s ease;
 }
 
 .producto img {
     width: 100%; /* Ajusta el ancho al contenedor */
     max-height: 150px; /* Limita la altura máxima */
-    object-fit: cover; /* Recorta la imagen si es necesario */
     border-radius: 5px;
     margin-bottom: 8px;
 }
@@ -117,10 +112,9 @@ main p{
     transform: scale(1.05);
 }
 #container-juegos {
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     justify-content: center; /* Añadido: centra los productos horizontalmente */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
