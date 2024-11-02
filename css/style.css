@@ -66,6 +66,7 @@ main p{
 .producto img {
     width: 100%; /* Ajusta el ancho al contenedor */
     max-height: 150px; /* Limita la altura máxima */
+    object-fit: cover; /* Recorta la imagen si es necesario */
     border-radius: 5px;
     margin-bottom: 8px;
 }
@@ -265,10 +266,10 @@ footer {
         align-items: center;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    #container-juegos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
     }
-
+    
    .container-logo img{
     justify-content:flex-start;
     max-width: 100px;
