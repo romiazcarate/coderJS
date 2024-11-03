@@ -71,6 +71,7 @@ const agregarCarrito = (id) => {
     }
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
+    actualizarContadorCarrito(); 
 };
 
 // Funcion para ir actualizando los juegos agregados al carrito
@@ -109,21 +110,33 @@ const actualizarCarrito = () => {
     vaciarCarritoBtn.style.display = carrito.length > 0 ? 'block' : 'none';
 };
 
-
+// Funcion para actualizar el contador del carrito
+const actualizarContadorCarrito = () => {
+    const contadorCarrito = document.getElementById("contador-carrito")
+    if(contadorCarrito){
+        contadorCarrito.innerText = carrito.length
+    }
+}
 
 const cargarCarritoDesdeLocalStorage = () => {
     const carritoGuardado = localStorage.getItem("carrito")
     if(carritoGuardado){
         carrito = JSON.parse(carritoGuardado)
         console.log('Carrito cargado desde localStorage:', carrito); // Verifica el contenido del carrito
-        actualizarCarrito()
+         // Verifica si estás en la página del carrito antes de llamar a actualizarCarrito
+         if (document.getElementById("contenedor-carrito")) {
+            actualizarCarrito()
+        }
+        actualizarContadorCarrito()
     }
+    
 }
 
 // Funcion para eliminar un juego del carrito
 const eliminarProductoCarrito = (id) => {
     carrito = carrito.filter(producto => producto.id !== id)
     actualizarCarrito()
+    actualizarContadorCarrito()
 }
 
 // Funcion para vaciar carrito
@@ -150,6 +163,7 @@ const vaciarCarrito = () => {
             );
         }
     });
+    actualizarContadorCarrito()
 };
 
 
@@ -163,6 +177,9 @@ const inicializar = async () => {
     if (document.getElementById("contenedor-carrito")) {
         cargarCarritoDesdeLocalStorage();
         actualizarCarrito();
+    }else{
+        cargarCarritoDesdeLocalStorage(); // Asegúrate de llamar a esta función en index.html también
+
     }
 
     // Vincular el botón de finalizar compra si existe en la página actual

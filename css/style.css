@@ -139,14 +139,15 @@ main p{
 }
 
 #carrito-icono {
-    font-size: 40px; /* Aumenta el tamaño del ícono */
     color: white; /* Cambia el color del ícono a blanco */
-    margin-right: 20px; /* Espaciado a la izquierda */
     transition: color 0.3s; /* Transición suave para el color */
+    font-size: 24px; /* Ajusta el tamaño según lo necesites */
+    margin-right: 10px; /* Ajusta el margen según lo necesites */
 }
 
-#carrito-icono:hover {
-    color: #E9A051; /* Cambia a un color diferente al pasar el mouse */
+#carrito-icono img {
+    width: 10px; /* Ajusta el tamaño según lo necesites */
+    height: auto;
 }
 
 .container-logo {
@@ -255,11 +256,27 @@ footer {
 .container-carrito a:hover {
     color: #E9A051; /* Cambia de color al pasar el mouse */
 }
+
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.container-carrito {
+    position: relative;
+}
 /* Responsive */
 
 @media (max-width: 768px) {
     header{
         flex-direction: column;
+        position: static;
     }
     nav ul {
         flex-direction: column;
@@ -274,6 +291,11 @@ footer {
     justify-content:flex-start;
     max-width: 100px;
    }
+
+   #carrito-icono {
+    font-size: 20px; /* Tamaño más pequeño */
+    margin-right: 10px; /* Ajusta el margen según lo necesites */
+}
 
 
 }
