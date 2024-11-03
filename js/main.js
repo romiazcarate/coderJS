@@ -3,7 +3,7 @@ const contenedorJuegosPS = document.getElementById("container-juegos")
 let carrito = [];
 let stockProductos = [];
 
-// Función para cargar el JSON
+// Función para cargar API
 const cargarProductos = async () => {
     try {
         const response = await fetch('https://api.rawg.io/api/games?key=813d0e66897a43d38fa21366c47589a4&platforms=187&page_size=50'); 
@@ -21,7 +21,7 @@ const cargarProductos = async () => {
 
         mostrarJuegos(); 
     } catch (error) {
-        console.error("Error al cargar el archivo JSON:", error);
+        console.error("Error al cargar API:", error);
     }
 };
 
