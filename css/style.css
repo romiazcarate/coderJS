@@ -30,6 +30,7 @@ main{
     flex: 1;
 }
 
+
 .container-logo img{
     max-width: 200px; 
     height: auto; 
@@ -44,6 +45,10 @@ header h1{
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
     flex: 2; 
+}
+h1{
+    letter-spacing: 2px; /* Espacio entre letras */
+    line-height: 1.2; /* Altura de la línea */
 }
 
 main p{
@@ -217,8 +222,8 @@ button {
 }
 
 footer {
-    background-color: #2c3e50; /* Color de fondo del footer */
-    color: #ffffff; /* Color del texto */
+    background-color: #2c3e50; 
+    color: #ffffff; 
     text-align: center;
     padding: 20px 0;
     position: relative;
@@ -275,29 +280,37 @@ footer {
 
 @media (max-width: 768px) {
     header{
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         position: static;
     }
-    nav ul {
-        flex-direction: column;
+
+    .container-logo {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .container-carrito {
+        display: flex;
+        justify-content: flex-end;
         align-items: center;
     }
+
 
     #container-juegos {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
     }
     
    .container-logo img{
-    justify-content:flex-start;
     max-width: 100px;
    }
 
    #carrito-icono {
     font-size: 20px; /* Tamaño más pequeño */
     margin-right: 10px; /* Ajusta el margen según lo necesites */
-}
-
-
+    }
 }
 
 @media (max-width: 480px) {

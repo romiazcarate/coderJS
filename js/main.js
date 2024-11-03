@@ -135,6 +135,7 @@ const cargarCarritoDesdeLocalStorage = () => {
 // Funcion para eliminar un juego del carrito
 const eliminarProductoCarrito = (id) => {
     carrito = carrito.filter(producto => producto.id !== id)
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualiza el localStorage después de eliminar
     actualizarCarrito()
     actualizarContadorCarrito()
 }
