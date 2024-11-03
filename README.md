@@ -29,4 +29,4 @@ Back2PS es una aplicación web interactiva diseñada para la compra de videojueg
 ## Instalación
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/romiazcarate/tcoderJS.git
